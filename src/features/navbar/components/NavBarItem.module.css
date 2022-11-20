@@ -1,0 +1,9 @@
+.navbarItem {
+  display: inline-flex;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.navbarItem span {
+  font-weight: bold;
+}

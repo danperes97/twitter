@@ -1,0 +1,22 @@
+.navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-right: 1px solid #aab8c23c;
+  left: 0;
+  top: 0;
+  width: 225px;
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.navbarIcon {
+  height: 30px;
+  width: 30px;
+  color: #0f1419;
+}
+
+.twitterLogo {
+  width: 30px;
+}
