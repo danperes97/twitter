@@ -1,7 +1,10 @@
 .container {
   border-right: 1px solid #aab8c23c;
+  border-left: 1px solid #aab8c23c;
   width: 598px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .container > .content {

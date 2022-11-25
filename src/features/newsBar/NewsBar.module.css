@@ -1,0 +1,9 @@
+.container {
+  position: sticky;
+  height: 100%;
+  top: 0;
+}
+
+.container>.content {
+  margin-left: 20px;
+}

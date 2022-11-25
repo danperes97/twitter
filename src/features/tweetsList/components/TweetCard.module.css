@@ -1,0 +1,36 @@
+.tweetCard {
+  display: flex;
+  align-items: flex-start;
+}
+
+.tweetCard>img {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+}
+
+.tweetCard>.tweetContent>p {
+  margin: 0;
+}
+
+.tweetContent {
+  margin-top: 5px;
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.card>.tweetStats {
+  margin-left: 50px;
+  display: flex;
+  justify-content: space-around;
+  margin-top: -5px;
+  margin-right: 10px;
+}
+
+.card {
+  margin-bottom: -15px;
+  margin-left: 10px;
+}

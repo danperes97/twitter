@@ -1,7 +1,6 @@
 .home-layout {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: row;
   align-content: flex-start;
-  height: 99vh;
+  position: relative;
+  display: flex;
+  height: 100%;
 }

@@ -2,13 +2,13 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  border-right: 1px solid #aab8c23c;
   left: 0;
   top: 0;
-  width: 225px;
   height: 100%;
   padding-top: 10px;
   padding-left: 10px;
+  padding-right: 10px;
+  position: sticky;
 }
 
 .navbarIcon {

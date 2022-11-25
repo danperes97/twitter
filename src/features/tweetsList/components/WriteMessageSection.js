@@ -7,6 +7,9 @@ import ProgramIcon from '../../../components/ProgramIcon'
 import LocationIcon from '../../../components/LocationIcon'
 import Hr from '../../../components/Hr'
 import styles from './WriteMessageSection.module.css'
+import { AiOutlinePicture, AiOutlineFileGif } from "react-icons/ai";
+import { CiCircleList } from "react-icons/ci";
+
 
 const WriteMessageSection = () => {
   return (
@@ -17,9 +20,9 @@ const WriteMessageSection = () => {
 
       <div className={styles.btnsSection}>
         <div className={styles.initBtns}>
-          <p><GaleryIcon/></p>
-          <p><GifIcon/></p>
-          <p><PoolIcon/></p>
+          <p><AiOutlinePicture/></p>
+          <p><AiOutlineFileGif/></p>
+          <p><CiCircleList/></p>
           <p><EmojiIcon/></p>
           <p><ProgramIcon/></p>
           <p><LocationIcon/></p>

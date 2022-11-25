@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .App-logo {
@@ -35,4 +37,15 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+#scroll {
+  direction: rtl;
+  overflow: auto;
+  height: 50px;
+  width: 50px;
+}
+
+#scroll div {
+  direction: ltr;
 }

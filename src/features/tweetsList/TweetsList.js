@@ -1,14 +1,9 @@
 import React from 'react'
-import EmojiIcon from '../../components/EmojiIcon'
-import GaleryIcon from '../../components/GaleryIcon'
-import GifIcon from '../../components/GifIcon'
-import LocationIcon from '../../components/LocationIcon'
-import PoolIcon from '../../components/PoolIcon'
-import ProgramIcon from '../../components/ProgramIcon'
 import Hr from '../../components/Hr'
 import styles from './TweetsList.module.css'
 import ConfigSection from './components/ConfigSection'
 import WriteMessageSection from './components/WriteMessageSection'
+import TweetCard from './components/TweetCard'
 
 const TweetsList = () => {
   return (
@@ -18,13 +13,19 @@ const TweetsList = () => {
 
         <div className={styles.tweetSection}>
           <ConfigSection/>
-
           <WriteMessageSection/>
         </div>
       </div>
-      
-      <Hr/>
 
+      <Hr/>
+      {[1,2,3,4,5,6,21,21,21,21,21].map((n) => {
+        return (
+          <>
+            <TweetCard/>
+            <Hr/>
+          </>
+        )
+      })}
     </div>
   )
 }
