@@ -10,3 +10,15 @@
 .container > .content {
   margin-left: 20px;
 }
+
+@media only screen and (max-width: 884px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .container {
+    width: 100vw;
+  }
+}

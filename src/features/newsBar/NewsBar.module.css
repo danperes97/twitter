@@ -4,6 +4,12 @@
   top: 0;
 }
 
-.container>.content {
+.container > .content {
   margin-left: 20px;
+}
+
+@media only screen and (max-width: 884px) {
+  .container {
+    display: none;
+  }
 }
