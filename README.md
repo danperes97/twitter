@@ -6,6 +6,12 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### IMPORTANT RUN NPM SERVER FIRST!!
+
+### `npm server`
+
+This will run json server, and it will serve a list of tweets.
+
 ### `npm start`
 
 Runs the app in the development mode.\
