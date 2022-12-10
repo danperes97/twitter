@@ -5,12 +5,15 @@
 }
 
 .configSection > span {
-  border: 1px solid #AAB8C2;
+  border: 1px solid #aab8c2;
   padding: 3px 13px 3px 13px;
   border-radius: 20px;
-  color: #1DA1F2;
+  color: #1da1f2;
   font-weight: bold;
   font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .configSection > img {

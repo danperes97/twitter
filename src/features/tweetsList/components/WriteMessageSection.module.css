@@ -6,30 +6,33 @@
   margin-top: 15px;
 }
 
-.messageSection>.awnserConfig {
-  color: #1DA1F2;
+.messageSection > .answerConfig {
+  color: #1da1f2;
   font-weight: bold;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
 }
 
-.messageSection>.inputPlaceholder {
+.messageSection > .inputPlaceholder {
   font-size: 1.3em;
   color: #657786;
   margin: 0px;
 }
 
-.messageSection>hr {
+.messageSection > hr {
   width: 95%;
   margin-right: 100px;
 }
 
-.messageSection>.btnsSection {
+.messageSection > .btnsSection {
   display: flex;
   justify-content: space-between;
   margin-right: 25px;
 }
 
-.messageSection>.btnsSection>button {
+.messageSection > .btnsSection > button {
   background-color: #8ecdf8d6;
   border: 0px;
   border-radius: 19px;
@@ -41,18 +44,18 @@
   color: white;
 }
 
-.messageSection>.btnsSection>.initBtns {
+.messageSection > .btnsSection > .initBtns {
   width: 30%;
   display: inline-flex;
   align-items: center;
 }
 
-.messageSection>.btnsSection>.initBtns svg {
+.messageSection > .btnsSection > .initBtns svg {
   margin-left: 10px;
   height: 20px;
-  fill: #1DA1F2;
+  fill: #1da1f2;
 }
 
-.messageSection>.btnsSection>.initBtns p {
+.messageSection > .btnsSection > .initBtns p {
   margin: 0px;
 }

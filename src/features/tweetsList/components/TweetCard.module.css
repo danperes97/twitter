@@ -3,13 +3,13 @@
   align-items: flex-start;
 }
 
-.tweetCard>img {
+.tweetCard > img {
   border-radius: 60px;
   width: 60px;
   height: 60px;
 }
 
-.tweetCard>.tweetContent>p {
+.tweetCard > .tweetContent > p {
   margin: 0;
 }
 
@@ -22,7 +22,7 @@
   gap: 10px;
 }
 
-.card>.tweetStats {
+.card > .tweetStats {
   margin-left: 50px;
   display: flex;
   justify-content: space-around;
