@@ -4,8 +4,9 @@ import Hr from "../../../components/Hr";
 import { AiOutlinePicture, AiOutlineFileGif } from "react-icons/ai";
 import { CiCircleList } from "react-icons/ci";
 import { BiWorld, BiSmile, BiCalendarAlt, BiMap } from "react-icons/bi";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useCreateTweet } from "../../../hooks/useCreateTweet";
+import Modal from "../../../components/Modal";
 
 const ConfigSection = ({ user, setRefresh }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -38,15 +39,34 @@ const ConfigSection = ({ user, setRefresh }) => {
     }, 200);
   };
 
+  const dissmissModalFunction = (e) => {
+    setShowWhoCanSeeModal(false);
+  };
+
+  const [showWhoCanSeeModal, setShowWhoCanSeeModal] = useState(false);
+  const whoCanSeeSelectRef = useRef(null);
+
   return (
     <>
       <div className={styles.configSection}>
         <img src={user.profile_picture} alt="user-profile-pic"></img>
         <div className={styles.formTweet}>
           <form onSubmit={handleSubmit}>
-            <p>
-              Qualquer pessoa <BiChevronDown />
-            </p>
+            <div
+              ref={whoCanSeeSelectRef}
+              className={styles.whoCanSeeSelect}
+              onClick={() => setShowWhoCanSeeModal(!showWhoCanSeeModal)}
+            >
+              <p>
+                Qualquer pessoa <BiChevronDown />
+              </p>
+              <Modal
+                showModal={showWhoCanSeeModal}
+                dissmissModalFunction={dissmissModalFunction}
+                clickOriginRef={whoCanSeeSelectRef}
+              />
+            </div>
+
             <p>
               <input
                 value={tweetText}
