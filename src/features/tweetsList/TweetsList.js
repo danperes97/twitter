@@ -2,12 +2,13 @@ import React from "react";
 import Hr from "../../components/Hr";
 import styles from "./TweetsList.module.css";
 import ConfigSection from "./components/ConfigSection";
-import WriteMessageSection from "./components/WriteMessageSection";
 import TweetCard from "./components/TweetCard";
 import { useGetTweets } from "../../hooks/useGetTweets";
+import { useGetCurrentUser } from "../../hooks/useGetCurrentUser";
 
 const TweetsList = () => {
-  const { tweets, loading, error } = useGetTweets();
+  const { tweets, loading, error, setRefresh } = useGetTweets();
+  const { user } = useGetCurrentUser();
 
   return (
     <div className={styles.container}>
@@ -15,8 +16,7 @@ const TweetsList = () => {
         <h3>Página Inicial</h3>
 
         <div className={styles.tweetSection}>
-          <ConfigSection />
-          <WriteMessageSection />
+          {user && <ConfigSection user={user} setRefresh={setRefresh} />}
         </div>
       </div>
 

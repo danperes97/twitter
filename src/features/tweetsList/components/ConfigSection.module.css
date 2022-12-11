@@ -4,20 +4,48 @@
   gap: 10px;
 }
 
-.configSection > span {
-  border: 1px solid #aab8c2;
-  padding: 3px 13px 3px 13px;
-  border-radius: 20px;
-  color: #1da1f2;
-  font-weight: bold;
-  font-size: 14px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .configSection > img {
   border-radius: 60px;
   width: 60px;
   height: 60px;
+}
+
+.formTweet {
+  width: 100%;
+}
+
+.tweetInput {
+  border: none;
+  font-size: 1.3em;
+}
+
+.tweetInput:focus {
+  outline: none;
+}
+
+.initBtns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.configBtns {
+  gap: 15px;
+  display: flex;
+  font-size: 20px;
+  color: #1da1f2;
+}
+
+.confirmTweet {
+  background-color: #1da1f2;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 20px 10px 20px;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
+
+.confirmTweet:disabled {
+  background-color: #9dd9ff;
 }

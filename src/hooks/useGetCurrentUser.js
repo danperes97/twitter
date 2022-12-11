@@ -1,31 +1,30 @@
-import { useEffect } from "react";
 import { useState } from "react";
+import { useEffect } from "react";
 
-const url = "http://localhost:3000/tweets";
+const url = "http://localhost:3000/users/1";
 
-export const useGetTweets = () => {
-  const [refresh, setRefresh] = useState(0);
-  const [tweets, setTweets] = useState(null);
+export const useGetCurrentUser = () => {
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const fetchTweets = async () => {
+    const fetchUser = async () => {
       setLoading(true);
 
       try {
         const res = await fetch(url);
         const json = await res.json();
 
-        setTweets(json);
+        setUser(json);
       } catch (error) {
         setError(`Erro: ${error}`);
       }
       setLoading(false);
     };
 
-    fetchTweets();
-  }, [refresh]);
+    fetchUser();
+  }, []);
 
-  return { tweets, loading, error, setRefresh };
+  return { user, loading, error };
 };

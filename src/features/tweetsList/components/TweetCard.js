@@ -16,7 +16,7 @@ const TweetCard = ({
     <>
       <div className={styles.card}>
         <div className={styles.tweetCard}>
-          <img src={picture} alt="profile-pic" />
+          <img src={picture} alt="profile" />
           <div className={styles.tweetContent}>
             <p>
               <b>{username}</b>

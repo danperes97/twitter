@@ -2,6 +2,7 @@
   border-right: 1px solid #aab8c23c;
   border-left: 1px solid #aab8c23c;
   width: 598px;
+  min-height: 100vh;
   height: fit-content;
   text-align: left;
   display: flex;
