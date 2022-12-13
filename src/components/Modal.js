@@ -2,8 +2,12 @@ import { React, useRef, useEffect } from "react";
 
 import styles from "./Modal.module.css";
 
-// Todo fix this, is not working!
-const Modal = ({ showModal, dissmissModalFunction, clickOriginRef }) => {
+const Modal = ({
+  showModal,
+  dissmissModalFunction,
+  clickOriginRef,
+  children,
+}) => {
   const domNode = useRef(null);
 
   useEffect(() => {
@@ -16,11 +20,7 @@ const Modal = ({ showModal, dissmissModalFunction, clickOriginRef }) => {
             clickOriginRef.current.contains(e.target))
         ) {
           //Deal click inside
-          console.log("hi");
         } else {
-          console.log("fora");
-          console.log(clickOriginRef);
-
           dissmissModalFunction();
         }
       });
@@ -30,7 +30,7 @@ const Modal = ({ showModal, dissmissModalFunction, clickOriginRef }) => {
   const renderModal = () => {
     return (
       <div ref={domNode} className={styles.modalContent}>
-        <h1>Modal</h1>
+        {children}
       </div>
     );
   };

@@ -1,10 +1,15 @@
 import styles from "./ConfigSection.module.css";
 import { BiChevronDown } from "react-icons/bi";
 import Hr from "../../../components/Hr";
-import { AiOutlinePicture, AiOutlineFileGif } from "react-icons/ai";
+import {
+  AiOutlineCheck,
+  AiOutlinePicture,
+  AiOutlineFileGif,
+} from "react-icons/ai";
 import { CiCircleList } from "react-icons/ci";
 import { BiWorld, BiSmile, BiCalendarAlt, BiMap } from "react-icons/bi";
-import { useState, useEffect, useRef } from "react";
+import { RiUserHeartFill } from "react-icons/ri";
+import { useState, useRef } from "react";
 import { useCreateTweet } from "../../../hooks/useCreateTweet";
 import Modal from "../../../components/Modal";
 
@@ -55,7 +60,7 @@ const ConfigSection = ({ user, setRefresh }) => {
             <div
               ref={whoCanSeeSelectRef}
               className={styles.whoCanSeeSelect}
-              onClick={() => setShowWhoCanSeeModal(!showWhoCanSeeModal)}
+              onClick={(e) => setShowWhoCanSeeModal(true)}
             >
               <p>
                 Qualquer pessoa <BiChevronDown />
@@ -64,7 +69,34 @@ const ConfigSection = ({ user, setRefresh }) => {
                 showModal={showWhoCanSeeModal}
                 dissmissModalFunction={dissmissModalFunction}
                 clickOriginRef={whoCanSeeSelectRef}
-              />
+              >
+                <h3 className={styles.audienceTitle}>Selecione a audiência</h3>
+
+                <div className={styles.audienceOption}>
+                  <div className={styles.audienceOptionTag}>
+                    <div className={styles.blueCircle}>
+                      <BiWorld />
+                    </div>
+                    <h4>Qualquer pessoa</h4>
+                  </div>
+
+                  <AiOutlineCheck />
+                </div>
+
+                <div className={styles.audienceOption}>
+                  <div className={styles.audienceOptionTag}>
+                    <div className={styles.greenCircle}>
+                      <RiUserHeartFill />
+                    </div>
+
+                    <div className={styles.twitterGroup}>
+                      <h4>Roda do twitter</h4>
+                    </div>
+                  </div>
+
+                  <AiOutlineCheck />
+                </div>
+              </Modal>
             </div>
 
             <p>
