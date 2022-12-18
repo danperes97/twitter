@@ -1,0 +1,70 @@
+.audienceAnswerSelect {
+  width: fit-content;
+  border-radius: 20px;
+  padding: 3px 15px 3px 15px;
+}
+
+.audienceAnswerSelect > .choose {
+  font-weight: bold;
+  color: #1da1f2;
+  font-size: 0.85em;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.audienceAnswerSelect:hover {
+  background-color: #e1e8ed;
+}
+
+.audienceTitle {
+  padding: 0px 10px 0px 20px;
+}
+
+.whoCanAnswerText {
+  padding: 0px 10px 0px 20px;
+  width: 300px;
+  color: gray;
+}
+
+.audienceOption {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 40px;
+  padding: 0px 20px 10px 20px;
+  margin: 10px 0px 10px 0px;
+}
+
+.audienceOption:hover {
+  cursor: pointer;
+  background-color: #e1e8ed;
+}
+
+.audienceOptionTag {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  gap: 10px;
+  width: 290px;
+}
+
+.blueCircle {
+  height: 45px;
+  width: 45px;
+  min-width: 45px;
+  background-color: #1da1f2;
+  color: white;
+  font-size: 1.3em;
+  font-weight: lighter;
+  border-radius: 50%;
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

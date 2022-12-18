@@ -6,6 +6,7 @@ import { BiWorld, BiSmile, BiCalendarAlt, BiMap } from "react-icons/bi";
 import { useState } from "react";
 import { useCreateTweet } from "../../../hooks/useCreateTweet";
 import AudienceSelect from "./AudienceSelect";
+import AudienceAnswerSelect from "./AudienceAnswerSelect";
 
 const ConfigSection = ({ user, setRefresh }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -38,7 +39,9 @@ const ConfigSection = ({ user, setRefresh }) => {
     }, 200);
   };
 
-  const [showWhoCanSeeModal, setShowWhoCanSeeModal] = useState(false);
+  const [showCanSeeAudienceModal, setShowCanSeeAudienceModal] = useState(false);
+  const [showCanSeeAudienceAnswerModal, setShowCanSeeAudienceAnswerModal] =
+    useState(false);
 
   return (
     <>
@@ -47,9 +50,10 @@ const ConfigSection = ({ user, setRefresh }) => {
         <div className={styles.formTweet}>
           <form onSubmit={handleSubmit}>
             <AudienceSelect
-              showWhoCanSeeModal={showWhoCanSeeModal}
-              setShowWhoCanSeeModal={setShowWhoCanSeeModal}
+              showWhoCanSeeModal={showCanSeeAudienceModal}
+              setShowWhoCanSeeModal={setShowCanSeeAudienceModal}
             />
+
             <p>
               <input
                 value={tweetText}
@@ -61,9 +65,12 @@ const ConfigSection = ({ user, setRefresh }) => {
                 placeholder="O que está acontecendo?"
               />
             </p>
-            <p className={styles.answerConfig}>
-              <BiWorld /> Qualquer pessoa pode responder
-            </p>
+
+            <AudienceAnswerSelect
+              showWhoCanSeeModal={showCanSeeAudienceAnswerModal}
+              setShowWhoCanSeeModal={setShowCanSeeAudienceAnswerModal}
+            />
+
             <Hr />
             <div className={styles.initBtns}>
               <div className={styles.configBtns}>
