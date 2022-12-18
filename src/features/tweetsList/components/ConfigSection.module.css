@@ -50,14 +50,14 @@
   background-color: #9dd9ff;
 }
 
-.whoCanSeeSelect {
+.audienceAnyone {
   border: 1px solid #aab8c2;
   width: fit-content;
   border-radius: 20px;
   padding: 3px 13px 3px 13px;
 }
 
-.whoCanSeeSelect p {
+.audienceAnyone p {
   font-weight: bold;
   color: #1da1f2;
   font-size: 0.85em;
@@ -68,7 +68,29 @@
   cursor: pointer;
 }
 
-.whoCanSeeSelect:hover {
+.audienceAnyone:hover {
+  background-color: #e1e8ed;
+}
+
+.audienceGroup {
+  border: 1px solid #00ba7c;
+  width: fit-content;
+  border-radius: 20px;
+  padding: 3px 13px 3px 13px;
+}
+
+.audienceGroup p {
+  font-weight: bold;
+  color: #00ba7c;
+  font-size: 0.85em;
+  margin: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.audienceGroup:hover {
   background-color: #e1e8ed;
 }
 

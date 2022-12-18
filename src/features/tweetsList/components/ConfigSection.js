@@ -44,12 +44,21 @@ const ConfigSection = ({ user, setRefresh }) => {
     }, 200);
   };
 
-  const dissmissModalFunction = (e) => {
+  const dissmissModalFunction = () => {
     setShowWhoCanSeeModal(false);
   };
 
   const [showWhoCanSeeModal, setShowWhoCanSeeModal] = useState(false);
   const whoCanSeeSelectRef = useRef(null);
+
+  const [audience, setAudience] = useState("Qualquer Pessoa");
+  const [audienceClass, setAudienceClass] = useState(styles.audienceAnyone);
+
+  const chooseAudience = (value, className) => {
+    setShowWhoCanSeeModal(false);
+    setAudience(value);
+    setAudienceClass(className);
+  };
 
   return (
     <>
@@ -59,11 +68,15 @@ const ConfigSection = ({ user, setRefresh }) => {
           <form onSubmit={handleSubmit}>
             <div
               ref={whoCanSeeSelectRef}
-              className={styles.whoCanSeeSelect}
-              onClick={(e) => setShowWhoCanSeeModal(true)}
+              className={audienceClass}
+              onClick={() => {
+                if (!showWhoCanSeeModal) {
+                  setShowWhoCanSeeModal(true);
+                }
+              }}
             >
               <p>
-                Qualquer pessoa <BiChevronDown />
+                {audience} <BiChevronDown />
               </p>
               <Modal
                 showModal={showWhoCanSeeModal}
@@ -72,7 +85,12 @@ const ConfigSection = ({ user, setRefresh }) => {
               >
                 <h3 className={styles.audienceTitle}>Selecione a audiência</h3>
 
-                <div className={styles.audienceOption}>
+                <div
+                  className={styles.audienceOption}
+                  onClick={() =>
+                    chooseAudience("Qualquer pessoa", styles.audienceAnyone)
+                  }
+                >
                   <div className={styles.audienceOptionTag}>
                     <div className={styles.blueCircle}>
                       <BiWorld />
@@ -80,21 +98,30 @@ const ConfigSection = ({ user, setRefresh }) => {
                     <h4>Qualquer pessoa</h4>
                   </div>
 
-                  <AiOutlineCheck />
+                  {audience === "Qualquer pessoa" ? (
+                    <AiOutlineCheck color="#1da1f2" />
+                  ) : null}
                 </div>
 
-                <div className={styles.audienceOption}>
+                <div
+                  className={styles.audienceOption}
+                  onClick={() =>
+                    chooseAudience("Roda do Twitter", styles.audienceGroup)
+                  }
+                >
                   <div className={styles.audienceOptionTag}>
                     <div className={styles.greenCircle}>
                       <RiUserHeartFill />
                     </div>
 
                     <div className={styles.twitterGroup}>
-                      <h4>Roda do twitter</h4>
+                      <h4>Roda do Twitter</h4>
                     </div>
                   </div>
 
-                  <AiOutlineCheck />
+                  {audience === "Roda do Twitter" ? (
+                    <AiOutlineCheck color="#1da1f2" />
+                  ) : null}
                 </div>
               </Modal>
             </div>
