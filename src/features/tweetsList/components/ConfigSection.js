@@ -1,17 +1,11 @@
 import styles from "./ConfigSection.module.css";
-import { BiChevronDown } from "react-icons/bi";
 import Hr from "../../../components/Hr";
-import {
-  AiOutlineCheck,
-  AiOutlinePicture,
-  AiOutlineFileGif,
-} from "react-icons/ai";
+import { AiOutlinePicture, AiOutlineFileGif } from "react-icons/ai";
 import { CiCircleList } from "react-icons/ci";
 import { BiWorld, BiSmile, BiCalendarAlt, BiMap } from "react-icons/bi";
-import { RiUserHeartFill } from "react-icons/ri";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useCreateTweet } from "../../../hooks/useCreateTweet";
-import Modal from "../../../components/Modal";
+import AudienceSelect from "./AudienceSelect";
 
 const ConfigSection = ({ user, setRefresh }) => {
   const [buttonDisabled, setButtonDisabled] = useState(true);
@@ -44,21 +38,7 @@ const ConfigSection = ({ user, setRefresh }) => {
     }, 200);
   };
 
-  const dissmissModalFunction = () => {
-    setShowWhoCanSeeModal(false);
-  };
-
   const [showWhoCanSeeModal, setShowWhoCanSeeModal] = useState(false);
-  const whoCanSeeSelectRef = useRef(null);
-
-  const [audience, setAudience] = useState("Qualquer Pessoa");
-  const [audienceClass, setAudienceClass] = useState(styles.audienceAnyone);
-
-  const chooseAudience = (value, className) => {
-    setShowWhoCanSeeModal(false);
-    setAudience(value);
-    setAudienceClass(className);
-  };
 
   return (
     <>
@@ -66,66 +46,10 @@ const ConfigSection = ({ user, setRefresh }) => {
         <img src={user.profile_picture} alt="user-profile-pic"></img>
         <div className={styles.formTweet}>
           <form onSubmit={handleSubmit}>
-            <div
-              ref={whoCanSeeSelectRef}
-              className={audienceClass}
-              onClick={() => {
-                if (!showWhoCanSeeModal) {
-                  setShowWhoCanSeeModal(true);
-                }
-              }}
-            >
-              <p>
-                {audience} <BiChevronDown />
-              </p>
-              <Modal
-                showModal={showWhoCanSeeModal}
-                dissmissModalFunction={dissmissModalFunction}
-                clickOriginRef={whoCanSeeSelectRef}
-              >
-                <h3 className={styles.audienceTitle}>Selecione a audiência</h3>
-
-                <div
-                  className={styles.audienceOption}
-                  onClick={() =>
-                    chooseAudience("Qualquer pessoa", styles.audienceAnyone)
-                  }
-                >
-                  <div className={styles.audienceOptionTag}>
-                    <div className={styles.blueCircle}>
-                      <BiWorld />
-                    </div>
-                    <h4>Qualquer pessoa</h4>
-                  </div>
-
-                  {audience === "Qualquer pessoa" ? (
-                    <AiOutlineCheck color="#1da1f2" />
-                  ) : null}
-                </div>
-
-                <div
-                  className={styles.audienceOption}
-                  onClick={() =>
-                    chooseAudience("Roda do Twitter", styles.audienceGroup)
-                  }
-                >
-                  <div className={styles.audienceOptionTag}>
-                    <div className={styles.greenCircle}>
-                      <RiUserHeartFill />
-                    </div>
-
-                    <div className={styles.twitterGroup}>
-                      <h4>Roda do Twitter</h4>
-                    </div>
-                  </div>
-
-                  {audience === "Roda do Twitter" ? (
-                    <AiOutlineCheck color="#1da1f2" />
-                  ) : null}
-                </div>
-              </Modal>
-            </div>
-
+            <AudienceSelect
+              showWhoCanSeeModal={showWhoCanSeeModal}
+              setShowWhoCanSeeModal={setShowWhoCanSeeModal}
+            />
             <p>
               <input
                 value={tweetText}
@@ -140,9 +64,7 @@ const ConfigSection = ({ user, setRefresh }) => {
             <p className={styles.answerConfig}>
               <BiWorld /> Qualquer pessoa pode responder
             </p>
-
             <Hr />
-
             <div className={styles.initBtns}>
               <div className={styles.configBtns}>
                 <AiOutlinePicture />
