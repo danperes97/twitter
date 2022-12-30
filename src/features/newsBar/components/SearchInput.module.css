@@ -1,0 +1,26 @@
+.inputWrapper {
+  display: flex;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 10px;
+  background-color: #e1e8ed;
+}
+
+.inputWrapper:focus-within {
+  border: 1px solid #1da1f2;
+  background-color: white;
+}
+
+.inputWrapper:focus-within > input {
+  background-color: white;
+  outline: none;
+}
+
+.inputWrapper > input {
+  border: none;
+  background-color: #e1e8ed;
+}
+
+.inputWrapper:focus-within > .searchIcon {
+  color: #1da1f2;
+}
