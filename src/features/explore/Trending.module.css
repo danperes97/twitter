@@ -1,0 +1,26 @@
+.container {
+  border-right: 1px solid #aab8c23c;
+  border-left: 1px solid #aab8c23c;
+  width: 598px;
+  min-height: 100vh;
+  height: fit-content;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.container > .content {
+  margin-left: 20px;
+}
+
+@media only screen and (max-width: 884px) {
+  .container {
+    width: 70vw;
+  }
+}
+
+@media only screen and (max-width: 539px) {
+  .container {
+    width: 100vw;
+  }
+}

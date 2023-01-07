@@ -2,6 +2,7 @@
   display: inline-flex;
   justify-content: flex-start;
   gap: 20px;
+  cursor: pointer;
 }
 
 .navbarItem span {
