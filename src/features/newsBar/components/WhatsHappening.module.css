@@ -1,16 +1,33 @@
 .whatsHapenningSection {
-  background-color: #eff3f4;
+  background-color: #1da0f213;
   border-radius: 10px;
-  padding: 0px 10px 10px 15px;
   display: flex;
   flex-direction: column;
-  width: 90%;
   align-items: flex-start;
+}
+
+.whatsHapenningSectionContent {
+  border-radius: 10px;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.whatsHapenningTitle {
+  padding: 0px 10px 0px 15px;
 }
 
 .cardWithPhoto {
   display: flex;
   gap: 30px;
+  cursor: pointer;
+  width: -webkit-fill-available;
+  padding: 10px 10px 10px 15px;
+}
+
+.cardWithPhoto:hover {
+  background-color: #6577861b;
 }
 
 .cardWithPhoto > img {
@@ -43,8 +60,13 @@
   align-items: flex-start;
   flex-direction: row;
   flex-wrap: nowrap;
-  width: 100%;
-  margin-top: 20px;
+  width: -webkit-fill-available;
+  cursor: pointer;
+  padding: 10px 10px 10px 15px;
+}
+
+.cardWithoutPhoto:hover {
+  background-color: #6577861b;
 }
 
 .cardWithoutPhoto > .cardLeftSection > p {
@@ -55,4 +77,21 @@
 
 .cardWithoutPhoto > .cardLeftSection > h4 {
   margin: 0px;
+}
+
+.showMore {
+  color: #1da1f2;
+  cursor: pointer;
+}
+
+.showMore:hover {
+  background-color: #6577861b;
+  border-radius: 0px 00px 10px 10px;
+  width: 100%;
+}
+
+.showMore > p {
+  padding-left: 15px;
+  width: fit-content;
+  font-size: 0.9em;
 }
